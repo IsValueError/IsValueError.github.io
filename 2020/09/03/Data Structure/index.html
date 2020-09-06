@@ -17,7 +17,7 @@
   <meta name="description" content="TOWARDS THE BEST.">
   <meta name="author" content="valueError">
   <meta name="keywords" content="">
-  <title>Record of C - ValueError&#39;s Memo</title>
+  <title>Data Structure - ValueError&#39;s Memo</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -152,8 +152,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-08-21 19:25">
-      2020年8月21日 晚上
+    <time datetime="2020-09-03 11:22">
+      2020年9月3日 上午
     </time>
   </div>
 
@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      561 字
+      0 字
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      10
+      1
        分钟
     </span>
   
@@ -204,160 +204,14 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h3 id="6-1-求自定类型元素序列的中位数"><a href="#6-1-求自定类型元素序列的中位数" class="headerlink" title="6-1 求自定类型元素序列的中位数"></a>6-1 求自定类型元素序列的中位数</h3><p>超时</p>
-<p>搜了教程推荐用<strong>Shellsort</strong></p>
-<h4 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序:"></a>插入排序:</h4><p><a href="https://www.cnblogs.com/lanhaicode/p/11259509.html" target="_blank" rel="noopener">https://www.cnblogs.com/lanhaicode/p/11259509.html</a>  【系列】</p>
-<p>由后向前扫描 </p>
-<p> in-place + 稳定</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>value</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>最好时间复杂度</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>最坏时间复杂度</td>
-<td>O(n^2^)</td>
-</tr>
-<tr>
-<td>空间复杂度</td>
-<td>O(1)</td>
-</tr>
-</tbody></table>
-<pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
-
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printarr</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *<span class="hljs-built_in">array</span>, <span class="hljs-keyword">int</span> len)</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">while</span>(i&lt;len)
-    &#123;
-        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>,*(<span class="hljs-built_in">array</span>+i));
-        i++;
-    &#125;
-    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
-&#125;
-
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
-    
-    <span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[<span class="hljs-number">7</span>] = &#123;<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">7</span>,<span class="hljs-number">6</span>,<span class="hljs-number">1</span>&#125;;
-    <span class="hljs-keyword">int</span> length = <span class="hljs-keyword">sizeof</span>(<span class="hljs-built_in">array</span>)/<span class="hljs-keyword">sizeof</span>(<span class="hljs-built_in">array</span>[<span class="hljs-number">0</span>]);
-    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"length : %d\n"</span>, length);
-
-    printarr(&amp;<span class="hljs-built_in">array</span>[<span class="hljs-number">0</span>], length);
-
-    <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i&lt;length ; i++)
-    &#123;
-        <span class="hljs-keyword">int</span> temp = <span class="hljs-built_in">array</span>[i];
-        <span class="hljs-keyword">for</span> (j = i<span class="hljs-number">-1</span>; j&gt;=<span class="hljs-number">0</span> &amp;&amp; <span class="hljs-built_in">array</span>[j] &gt; temp ;j--)
-        &#123;
-           <span class="hljs-built_in">array</span>[j+<span class="hljs-number">1</span>] = <span class="hljs-built_in">array</span>[j];
-           <span class="hljs-comment">//array[j] = temp;  </span>
-        &#125;
-        <span class="hljs-built_in">array</span>[j+<span class="hljs-number">1</span>] = temp;
-        printarr(&amp;<span class="hljs-built_in">array</span>[<span class="hljs-number">0</span>], length);
-    &#125;
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-&#125;</code></pre>
-
-<p>小规模数据 / 基本有序</p>
-<h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4><p>简单插入排序的改进——缩小增量排序</p>
-<h3 id="7-36-复数四则运算"><a href="#7-36-复数四则运算" class="headerlink" title="7-36 复数四则运算"></a><strong>7-36</strong> <strong>复数四则运算</strong></h3><p><a href="https://pintia.cn/problem-sets/14/problems/816" target="_blank" rel="noopener">https://pintia.cn/problem-sets/14/problems/816</a></p>
-<p>==等待一个完善代码==</p>
-<pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span>
-
-
-<span class="hljs-keyword">float</span> eps = <span class="hljs-number">0.05</span>;
-<span class="hljs-comment">//<span class="hljs-doctag">TODO:</span> b1,b2 == 0? 默认不为0 需要修改</span>
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print_pre</span><span class="hljs-params">(<span class="hljs-keyword">char</span> sig, <span class="hljs-keyword">float</span> a1, <span class="hljs-keyword">float</span> b1, <span class="hljs-keyword">float</span> a2,<span class="hljs-keyword">float</span> b2)</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-keyword">if</span>(b1 &gt;= <span class="hljs-number">0</span> &amp;&amp; b2 &gt;= <span class="hljs-number">0</span>)
-        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"(%.1f+%.1fi) %c (%.1f+%.1fi) = "</span>, a1, b1, sig, a2, b2);
-    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>( b1 &lt; <span class="hljs-number">0</span> &amp;&amp; b2 &gt; <span class="hljs-number">0</span>)
-        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"(%.1f%.1fi) %c (%.1f+%.1fi) = "</span>, a1, b1, sig, a2, b2);
-    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>( b1 &gt; <span class="hljs-number">0</span> &amp;&amp; b2 &lt; <span class="hljs-number">0</span>)
-        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"(%.1f+%.1fi) %c (%.1f%.1fi) = "</span>, a1, b1, sig, a2, b2);
-    <span class="hljs-keyword">else</span>
-        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"(%.1f%.1fi) %c (%.1f%.1fi) = "</span>, a1, b1, sig, a2, b2);
-
-&#125;
-
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printanswer</span><span class="hljs-params">(<span class="hljs-keyword">float</span> x, <span class="hljs-keyword">float</span> y)</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">fabs</span>(x)&gt;=eps)&#123;
-        <span class="hljs-comment">//printf(" abs  %f\n",fabs(x));</span>
-        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">fabs</span>(y) &gt;=eps)&#123;
-        <span class="hljs-keyword">if</span>(y &lt; <span class="hljs-number">0</span>)
-            <span class="hljs-comment">//printf("%.1f\n", x);</span>
-            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%.1f%.1fi\n"</span>,x,y);
-        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(y &gt; <span class="hljs-number">0</span> )
-            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%.1f+%.1fi\n"</span>,x,y);
-        &#125;
-        <span class="hljs-keyword">else</span> 
-            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%.1f\n"</span>,x);
-    &#125;
-    <span class="hljs-keyword">else</span> 
-    &#123;
-        <span class="hljs-comment">//printf("no\n");</span>
-        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">fabs</span>(y)&lt;eps)
-            <span class="hljs-comment">//printf("%.1f\n", 0);</span>
-            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"0.0\n"</span>);
-        <span class="hljs-keyword">else</span> 
-            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%.1fi\n"</span>,y);
-        
-    &#125;
-&#125;
-
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
-    <span class="hljs-keyword">float</span> a1, b1, a2, b2;
-    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%f %f %f %f"</span>,&amp;a1,&amp;b1,&amp;a2,&amp;b2);
-    
-    print_pre(<span class="hljs-string">'+'</span>,a1, b1, a2, b2);
-    printanswer((a1+a2),b1+b2);
-
-    print_pre(<span class="hljs-string">'-'</span>,a1, b1, a2, b2);
-    printanswer((a1-a2),b1-b2);
-
-    print_pre(<span class="hljs-string">'*'</span>,a1, b1, a2, b2);
-    printanswer((a1*a2 -b1*b2),a1*b2 + a2*b1);
-
-    print_pre(<span class="hljs-string">'/'</span>,a1, b1, a2, b2);
-    
-    printanswer((a1*a2+b1*b2)/(a2*a2+b2*b2),(b1*a2-a1*b2)/(a2*a2+b2*b2));
-    <span class="hljs-comment">//printf("%f %f\n",(a1*a2+b1*b2)/(a2*a2+b2*b2),(b1*a2-a1*b2)/(a2*a2+b2*b2));</span>
-
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-&#125;</code></pre>
-
-<ol>
-<li><p>函数的编写</p>
-</li>
-<li><p>$&lt;math.h&gt;$ 关于绝对值</p>
-<p><code>int abs(int i);</code> </p>
-<p><code>double fabs(double i);</code></p>
-</li>
-</ol>
+              <p><img src="C:%5CUsers%5C18142%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200903112320074.png" srcset="/img/loading.gif" alt="image-20200903112320074"></p>
+<p><img src="C:%5CUsers%5C18142%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200903112355112.png" srcset="/img/loading.gif" alt="image-20200903112355112"></p>
 
             </article>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/coding/">coding</a>
-                    
-                      <a class="hover-with-bg" href="/tags/C/">C</a>
-                    
-                  </div>
                 
               </div>
               
@@ -368,18 +222,12 @@
                   <div class="post-prev col-6">
                     
                     
-                      <a href="/2020/09/03/Data%20Structure/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Data Structure</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </div>
                   <div class="post-next col-6">
                     
                     
-                      <a href="/2020/04/26/hello-world/">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2020/08/21/Record-of-C/">
+                        <span class="hidden-mobile">Record of C</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -518,7 +366,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Record of C&nbsp;",
+        "Data Structure&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
